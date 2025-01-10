@@ -17,7 +17,7 @@
     <div class="container">
         <div class="image-container">
             <a href="https://www.ini.fiocruz.br/"><img src="https://sipec.ini.fiocruz.br/sipec/seg/imagens/promo.png" alt="Imagem Principal"></a>
-        </div><!--image-container-->
+        </div>
         <div class="login-container">
             <h2>Sentinela</h2>
             <form id="loginForm">
@@ -28,51 +28,19 @@
                 <button type="button" onclick="login()">Logar</button>
                 <div class="forgot-password">
                     <a href="#">Esqueci a senha</a>
-                </div><!--forgot-password-->
+                </div>
             </form>
             <div id="errorContainer" class="error"></div>
-        </div><!--login-container-->
-    </div> <!--container-->
+        </div>
+    </div>
     <footer>
         Desenvolvido por <a href="https://www.linkedin.com/in/felixfreitasjr/" target="_blank">Felix Freitas Jr</a>
         <br>
         Veja mais no <a href="https://github.com/felixfreitasjr" target="_blank">GitHub</a> | <a href="https://github.com/FelixFreitasJr/sentinela" target="_blank">Documentação do Projeto</a>
     </footer>
+
     <!-- Supabase JavaScript SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.15.7/dist/supabase.min.js"></script>
-    <script>
-        const SUPABASE_URL = 'https://orxxwpwkdqfkicsjrnux.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yeHh3cHdrZHFma2ljc2pybnV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1MjIzMTEsImV4cCI6MjA0NzA5ODMxMX0.oyssvAO7anydXUk30PaGMVaeMC4uDoLvTzmaAOSDmVo';
-
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        async function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const email = `${username}@ini.fiocruz.br`;
-
-            const { data: users, error } = await supabase
-                .from('users')
-                .select('*')
-                .eq('email', email);
-
-            const errorContainer = document.getElementById('errorContainer');
-            errorContainer.textContent = '';  // Limpa mensagens de erro anteriores
-
-            if (error) {
-                errorContainer.textContent = 'Erro ao conectar-se ao banco de dados.';
-            } else if (users.length === 0) {
-                errorContainer.textContent = 'Usuário não encontrado. Verifique se o nome de usuário está correto.';
-            } else {
-                const user = users[0];
-                if (user.senha !== password) {
-                    errorContainer.textContent = 'Senha incorreta. Tente novamente.';
-                } else {
-                    alert(`Bem-vindo, ${user.nome}`);
-                    window.location.href = '/src/web/page/dashboard.html';
-                }
-            }
-        }
-    </script>
+    <script src="src/web/js/login.js"></script>
 </body>
 </html>
