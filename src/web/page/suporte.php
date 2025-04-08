@@ -11,6 +11,7 @@ require_once('../php/protege_pagina.php');
 <body>
     <h1>Painel Suporte</h1>
     <p>Bem-vindo(a), suporte.</p>
+    <a href="../page/cadastro.php">Cadastro</a>
     <a href="../php/logout.php">Sair</a>
 </body>
 </html>
