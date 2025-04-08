@@ -39,6 +39,7 @@
         Veja mais no <a href="https://github.com/felixfreitasjr" target="_blank">GitHub</a> | <a href="https://github.com/FelixFreitasJr/sentinela" target="_blank">Documentação do Projeto</a>
     </footer>
 
+    <script src="src/web/js/login.js"></script>
 
 </body>
 </html>
