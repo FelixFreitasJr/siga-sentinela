@@ -9,6 +9,6 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
 
 // Verifica se o perfil é o esperado
 if (!isset($roleEsperado) || $_SESSION['role'] !== $roleEsperado) {
-    echo "Acesso negado.";
+    header('Location: /index.html');
     exit;
 }

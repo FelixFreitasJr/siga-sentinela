@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     background-color: #DFDDCE;
@@ -17,11 +23,38 @@ body {
     margin: auto;
 }
 
+.container-menu{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.container-navbar{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
 .image-container {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+.image-container-menu{
+    max-width:80vw;
+    align-content:center;
+    margin-top:100px
+    img{
+        width: 100%;
+        height: auto
+    }
 }
 
 .image-container img {

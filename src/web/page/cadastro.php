@@ -7,18 +7,7 @@ if (isset($_SESSION['perfil']) && $_SESSION['perfil'] === 'operacional') {
     exit();
 }
 
-// Define o link de volta com base no perfil
-$perfil = $_SESSION['perfil'] ?? '';
-$linkMenu = '#';
 
-switch ($perfil) {
-    case 'adm':
-        $linkMenu = '../page/admin.php';
-        break;
-    case 'suporte':
-        $linkMenu = '../page/suporte.php';
-        break;
-}
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +46,6 @@ switch ($perfil) {
     </form>
 
     <br><br>
-    <a href="<?= $linkMenu ?>"><button type="button">Voltar ao Menu</button></a>
+    <a href="menu.php"><button type="button">Voltar ao Menu</button></a>
 </body>
 </html>
